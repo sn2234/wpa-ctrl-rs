@@ -7,21 +7,18 @@
 //! # Example
 //!
 //! ```
-//! let mut wpa = wpactrl::WpaCtrl::new().open().unwrap();
+//! let mut wpa = wpactrl::Client::builder().open().unwrap();
 //! println!("{}", wpa.request("LIST_NETWORKS").unwrap());
 //! ```
 //!
 //! The library currently only supports UNIX sockets, but additional
 //! connection methods (eg UDP or pipes) may be added in the future.
-#[macro_use]
-extern crate failure;
-#[macro_use]
-extern crate log;
-extern crate nix;
 
+mod error;
 mod wpactrl;
-pub use wpactrl::{WpaCtrl, WpaCtrlAttached, WpaCtrlBuilder};
+pub use crate::wpactrl::{Client, ClientAttached, ClientBuilder};
 
-use failure::Error;
-/// Result type used for the library
+pub use crate::error::Error;
+
+/// A `Result` alias where the `Err` case is `wpactrl::Error`
 pub type Result<T> = ::std::result::Result<T, Error>;
