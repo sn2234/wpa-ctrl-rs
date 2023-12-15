@@ -6,12 +6,12 @@ categories = [ "api-bindings", "embedded", "network-programming", "os" ]
 keywords = [ "hostapd", "wpa_cli", "wpa_ctrl", "wpa_supplicant" ]
 license = "MIT"
 repository = "https://github.com/spease/wpa-ctrl-rs"
-version = "0.5.1"
+version = "0.5.2"
 authors = [ "Sauyon Lee <s@uyon.co>", "Steven Pease <peasteven@gmail.com>" ]
 
 [dependencies]
-log = { version = "0.4.16", default-features = false }
-libc = { version = "0.2.122", default-features = false }
+log = { version = "0.4", default-features = false }
+libc = { version = "0.2", default-features = false }
 
 [dev-dependencies]
-serial_test = { version = "0.6.0", default-features = false }
+serial_test = { version = "2.0", default-features = false }
